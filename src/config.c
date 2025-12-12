@@ -16,13 +16,15 @@ static struct {
 } options[] = {
 	{ "hint_activation_key", "A-M-x", "Activates hint mode.", OPT_KEY },
 	{ "hint2_activation_key", "A-M-X", "Activate two pass hint mode.", OPT_KEY },
+	{ "hint3x3_activation_key", "A-M-3", "Activate 3x3 grid mode.", OPT_KEY },
 	{ "grid_activation_key", "A-M-g", "Activates grid mode and allows for further manipulation of the pointer using the mapped keys.", OPT_KEY },
 	{ "history_activation_key", "A-M-h", "Activate history mode.", OPT_KEY },
 	{ "screen_activation_key", "A-M-s", "Activate (s)creen selection mode.", OPT_KEY },
 	{ "activation_key", "A-M-c", "Activate normal movement mode (manual (c)ursor movement).", OPT_KEY },
 
-	{ "hint_oneshot_key", "A-M-l", "Activate hint mode and exit upon selection.", OPT_KEY },
-	{ "hint2_oneshot_key", "A-M-L", "Activate two pass hint mode and exit upon selection.", OPT_KEY },
+	{ "hint_oneshot_key", "A-M-k", "Activate hint mode and exit upon selection.", OPT_KEY },
+	{ "hint2_oneshot_key", "A-M-K", "Activate two pass hint mode and exit upon selection.", OPT_KEY },
+	{ "hint3x3_oneshot_key", "A-M-l", "Activate 3x3 grid mode and exit upon selection.", OPT_KEY },
 
 	/* Normal mode keys */
 
@@ -39,6 +41,7 @@ static struct {
 	{ "history", ";", "Activate hint history mode while in normal mode.", OPT_KEY },
 	{ "hint", "x", "Activate hint mode while in normal mode (mnemonic: x marks the spot?).", OPT_KEY },
 	{ "hint2", "X", "Activate two pass hint mode.", OPT_KEY },
+	{ "hint3x3", "3", "Activate 3x3 grid mode while in normal mode.", OPT_KEY },
 	{ "grid", "g", "Activate (g)rid mode while in normal mode.", OPT_KEY },
 	{ "screen", "s", "Activate (s)creen selection while in normal mode.", OPT_KEY },
 
@@ -105,6 +108,10 @@ static struct {
 	{ "hint2_size", "20", "The size of hints in the secondary grid (range: 1-1000).", OPT_INT },
 	{ "hint2_gap_size", "1", "The spacing between hints in the secondary grid. (range: 1-1000)", OPT_INT },
 	{ "hint2_grid_size", "3", "The size of the secondary grid.", OPT_INT },
+
+	{ "hint3x3_chars", "uiojklm,.", "The character set used for 3x3 grid mode (9 characters).", OPT_STRING },
+	{ "hint3x3_size", "20", "The size of hints in the 3x3 grid (range: 1-1000).", OPT_INT },
+	{ "hint3x3_gap_size", "1", "The spacing between hints in the 3x3 grid. (range: 1-1000)", OPT_INT },
 
 	{ "screen_chars", "jkl;asdfg", "The characters used for screen selection.", OPT_STRING },
 

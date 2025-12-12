@@ -7,6 +7,8 @@ static const char *activation_keys[] = {
 	"screen_activation_key",
 	"hint2_activation_key",
 	"hint2_oneshot_key",
+	"hint3x3_activation_key",
+	"hint3x3_oneshot_key",
 	"history_activation_key",
 };
 
@@ -55,6 +57,8 @@ void daemon_loop(const char *config_path)
 			mode = MODE_HINT;
 		else if (config_input_match(ev, "hint2_activation_key"))
 			mode = MODE_HINT2;
+		else if (config_input_match(ev, "hint3x3_activation_key"))
+			mode = MODE_HINT3X3;
 		else if (config_input_match(ev, "screen_activation_key"))
 			mode = MODE_SCREEN_SELECTION;
 		else if (config_input_match(ev, "history_activation_key"))
@@ -64,6 +68,9 @@ void daemon_loop(const char *config_path)
 			continue;
 		} else if (config_input_match(ev, "hint_oneshot_key")) {
 			full_hint_mode(0);
+			continue;
+		} else if (config_input_match(ev, "hint3x3_oneshot_key")) {
+			hint3x3_mode();
 			continue;
 		} else if (config_input_match(ev, "history_oneshot_key")) {
 			history_hint_mode();
