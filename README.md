@@ -2,9 +2,11 @@
 
 adds 3x3 hint mode with hints mapped to logical single keys
 
+```
 top left middle right ... u i p
 mid left middle right ... j k l
 bot left middle right ... m , .
+```
 
 macos
 - test with `./bin/warpd --hint3x3 --oneshot`
